@@ -20,9 +20,21 @@ app.use(express.static("public"));
 
 app.get("/", (req, res, next) => {
   res.render("home", {
-    greeting: homeStartingContent,
+    startingContent: homeStartingContent,
   });
   console.log(req.body);
+});
+
+app.get("/about", (req, res, next) => {
+  res.render("about", {
+    about: aboutContent,
+  });
+});
+
+app.get("/contact", (req, res, next) => {
+  res.render("contact", {
+    contact: contactContent,
+  });
 });
 
 app.listen(3000, function () {
